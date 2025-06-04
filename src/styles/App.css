@@ -1,0 +1,354 @@
+/* src/styles/App.css */
+
+/* Estilos globais para o corpo da página */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Garante que a fonte Inter seja usada */
+}
+
+/* Estilos para o contêiner principal do aplicativo */
+.app-main-container {
+  min-height: 100vh; /* min-h-screen */
+  background-color: #ffe0b2; /* bg-orange-100 */
+  color: #1a202c; /* text-gray-900 */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+  padding: 1rem; /* p-4 */
+}
+
+/* Estilos para o modo escuro do contêiner principal */
+body.dark-mode .app-main-container {
+  background-color: #262626; /* dark:bg-orange-950 */
+  color: #e2e8f0; /* dark:text-gray-100 */
+}
+
+/* Estilos para o contêiner da janela do chat */
+.chat-window {
+  width: 100%; /* w-full */
+  max-width: 48rem; /* max-w-2xl (768px) */
+  background-color: #ffffff; /* bg-white */
+  border-radius: 0.5rem; /* rounded-lg (8px) */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  padding: 1.5rem; /* p-6 */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  height: 90vh; /* h-[90vh] */
+}
+
+/* Estilos para o modo escuro da janela do chat */
+body.dark-mode .chat-window {
+  background-color: #374151; /* dark:bg-gray-800 */
+}
+
+/* Estilos para o título principal */
+.chat-title {
+  font-size: 1.875rem; /* text-3xl (30px) */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 1.5rem; /* mb-6 (24px) */
+  color: #2563eb; /* text-blue-600 */
+}
+
+/* Estilos para o modo escuro do título principal */
+body.dark-mode .chat-title {
+  color: #60a5fa; /* dark:text-blue-400 */
+}
+
+/* Estilos para o display do ID do usuário */
+.user-id-display {
+  margin-bottom: 1rem; /* mb-4 */
+  font-size: 0.875rem; /* text-sm (14px) */
+  color: #4b5563; /* text-gray-600 */
+  text-align: center; /* text-center */
+}
+
+/* Estilos para o modo escuro do display do ID do usuário */
+body.dark-mode .user-id-display {
+  color: #9ca3af; /* dark:text-gray-400 */
+}
+
+.user-id-display span {
+  font-family: monospace; /* font-mono */
+  word-break: break-all; /* break-all */
+}
+
+/* Estilos para as seções de entrada (nome de usuário, hobby) */
+.input-section {
+  margin-bottom: 1.5rem; /* mb-6 */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+  gap: 0.5rem; /* space-y-2 (para colunas), space-x-2 (para linhas) */
+}
+
+/* Responsividade para telas pequenas (sm:flex-row, sm:space-y-0, sm:space-x-2) */
+@media (min-width: 640px) {
+  .input-section {
+    flex-direction: row;
+    gap: 0.5rem; /* Usando gap para substituir space-x-2 e space-y-0 */
+  }
+}
+
+/* Estilos para campos de entrada */
+.text-input {
+  flex-grow: 1; /* flex-grow */
+  padding: 0.75rem; /* p-3 */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.375rem; /* rounded-md */
+  outline: none; /* focus:outline-none */
+  background-color: #f9fafb; /* bg-gray-50 */
+  color: #111827; /* text-gray-900 */
+}
+
+/* Estilos para o modo escuro do campo de entrada */
+body.dark-mode .text-input {
+  border-color: #4b5563; /* dark:border-gray-600 */
+  background-color: #374151; /* dark:bg-gray-700 */
+  color: #f3f4f6; /* dark:text-gray-100 */
+}
+
+/* Estilos de foco para o campo de entrada */
+.text-input:focus {
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+}
+
+/* Estilos base para botões */
+.base-button {
+  width: 100%; /* w-full */
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  color: #ffffff; /* text-white */
+  font-weight: 600; /* font-semibold */
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: all 300ms ease-in-out; /* transition duration-300 ease-in-out */
+  cursor: pointer;
+  border: none; /* Remove a borda padrão do botão */
+}
+
+/* Responsividade para botões em telas pequenas */
+@media (min-width: 640px) {
+  .base-button {
+    width: auto; /* sm:w-auto */
+  }
+}
+
+/* Efeito de hover para botões */
+.base-button:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+}
+
+/* Estilos específicos para o botão de Mudar Nome */
+.button-purple {
+  background-color: #9333ea; /* bg-purple-600 */
+}
+.button-purple:hover {
+  background-color: #7e22ce; /* hover:bg-purple-700 */
+}
+
+/* Estilos específicos para o botão de Selecionar Hobby */
+.button-blue {
+  background-color: #2563eb; /* bg-blue-600 */
+}
+.button-blue:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+/* Estilos específicos para o botão de Enviar Mensagem */
+.button-green {
+  background-color: #16a34a; /* bg-green-600 */
+}
+.button-green:hover {
+  background-color: #15803d; /* hover:bg-green-700 */
+}
+
+/* Estilos para o display "Olá, [username]!" */
+.username-greeting {
+  margin-bottom: 1rem; /* mb-4 */
+  font-size: 1.125rem; /* text-lg (18px) */
+  font-weight: 600; /* font-semibold */
+  text-align: center; /* text-center */
+  color: #4f46e5; /* text-indigo-600 */
+}
+
+/* Estilos para o modo escuro do display "Olá, [username]!" */
+body.dark-mode .username-greeting {
+  color: #818cf8; /* dark:text-indigo-400 */
+}
+
+.username-greeting span {
+  text-transform: capitalize; /* capitalize */
+}
+
+/* Estilos para o título do Hobby Atual */
+.current-hobby-title {
+  font-size: 1.5rem; /* text-2xl (24px) */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center; /* text-center */
+  color: #16a34a; /* text-green-600 */
+}
+
+/* Estilos para o modo escuro do título do Hobby Atual */
+body.dark-mode .current-hobby-title {
+  color: #4ade80; /* dark:text-green-400 */
+}
+
+.current-hobby-title span {
+  text-transform: capitalize; /* capitalize */
+}
+
+/* Estilos para a área de mensagens */
+.messages-area {
+  flex: 1; /* flex-1 */
+  overflow-y: auto; /* overflow-y-auto */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 1rem; /* p-4 */
+  margin-bottom: 1rem; /* mb-4 */
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+/* Estilos para o modo escuro da área de mensagens */
+body.dark-mode .messages-area {
+  border-color: #4b5563; /* dark:border-gray-600 */
+  background-color: #374151; /* dark:bg-gray-700 */
+}
+
+/* Estilos para a mensagem de "Nenhuma mensagem..." */
+.no-messages-text {
+  text-align: center; /* text-center */
+  color: #6b7280; /* text-gray-500 */
+}
+
+/* Estilos para o modo escuro da mensagem de "Nenhuma mensagem..." */
+body.dark-mode .no-messages-text {
+  color: #9ca3af; /* dark:text-gray-400 */
+}
+
+/* Estilos para cada item de mensagem */
+.message-item {
+  display: flex; /* flex */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+/* Estilos para mensagens do próprio usuário (justificado à direita) */
+.message-item.own-message {
+  justify-content: flex-end; /* justify-end */
+}
+
+/* Estilos para mensagens de outros usuários (justificado à esquerda) */
+.message-item.other-message {
+  justify-content: flex-start; /* justify-start */
+}
+
+/* Estilos para o balão da mensagem */
+.message-bubble {
+  max-width: 70%; /* max-w-[70%] */
+  padding: 0.75rem; /* p-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+/* Estilos para balão de mensagem do próprio usuário */
+.message-bubble.own-message-bubble {
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff; /* text-white */
+  border-bottom-right-radius: 0; /* rounded-br-none */
+}
+
+/* Estilos para balão de mensagem de outros usuários */
+.message-bubble.other-message-bubble {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #111827; /* text-gray-900 */
+  border-bottom-left-radius: 0; /* rounded-bl-none */
+}
+
+/* Estilos para o modo escuro do balão de mensagem de outros usuários */
+body.dark-mode .message-bubble.other-message-bubble {
+  background-color: #4b5563; /* dark:bg-gray-600 */
+  color: #f3f4f6; /* dark:text-gray-100 */
+}
+
+/* Estilos para o nome de usuário/metadata na mensagem */
+.message-username {
+  font-weight: 600; /* font-semibold */
+  font-size: 0.875rem; /* text-sm */
+  margin-bottom: 0.25rem; /* mb-1 */
+  opacity: 0.8; /* opacity-80 */
+}
+
+/* Estilos para o texto da mensagem */
+.message-text {
+  font-size: 1rem; /* text-base */
+  word-break: break-words; /* break-words */
+}
+
+/* Estilos para o timestamp da mensagem */
+.message-timestamp {
+  font-size: 0.75rem; /* text-xs */
+  margin-top: 0.25rem; /* mt-1 */
+  opacity: 0.7; /* opacity-70 */
+  text-align: right; /* text-right */
+}
+
+/* Estilos para o campo de entrada de mensagem inferior */
+.message-input-section {
+  display: flex; /* flex */
+  gap: 0.5rem; /* space-x-2 */
+}
+
+/* Estilos para o spinner de carregamento */
+.loading-spinner-container {
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  min-height: 100vh; /* min-h-screen */
+  background-color: #ffe0b2; /* bg-orange-100 */
+}
+
+/* Estilos para o modo escuro do spinner */
+body.dark-mode .loading-spinner-container {
+  background-color: #262626; /* dark:bg-orange-950 */
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite; /* animate-spin */
+  border-radius: 9999px; /* rounded-full */
+  height: 4rem; /* h-16 */
+  width: 4rem; /* w-16 */
+  border-top: 2px solid #3b82f6; /* border-t-2 border-blue-500 */
+  border-bottom: 2px solid #3b82f6; /* border-b-2 border-blue-500 */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para o botão de alternar modo escuro */
+.dark-mode-toggle-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #6b7280; /* cinza */
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle-button:hover {
+  background-color: #4b5563; /* cinza mais escuro no hover */
+}
