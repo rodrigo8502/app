@@ -12,7 +12,7 @@ const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
 // SEU OBJETO firebaseConfig HARDCODED (APENAS ESTA CÓPIA DEVE EXISTIR)
 const firebaseConfig = {
-  apiKey: "AIzaSyAHa-yRkk64xJWoqNl2dIgCXpK3zlomtDQ",
+  apiKey: "SUA_API_KEY_AQUI",
   authDomain: "project1-7ae99.firebaseapp.com",
   projectId: "project1-7ae99",
   storageBucket: "project1-7ae99.firebasestorage.app",
